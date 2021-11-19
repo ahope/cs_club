@@ -3,6 +3,11 @@ def on_forever():
     pause(500)
     light.onboard_strip().set_gradient(0x0000ff, 0xffffff)
     pause(500)
+
+def on_button_a_click():
+    pass
+input.button_a.on_event(ButtonEvent.CLICK, on_button_a_click)
+
 def red_gradiant():
     global spped
     spped = 200
@@ -64,51 +69,60 @@ def red_gradiant_2():
         light.set_pixel_color(i, red_sat(sat2))
         sat2 = sat2 + 25
         pause(spped)
-    # light.set_all(0xffffff)
+# light.set_all(0xffffff)
 def red_sat(sat: number):
     return light.hsv(255, sat, 255)
-sat2 = 0
-spped = 0
-sat22 = 0
-
-
+def on_forever3():
+    global spped, sat22, k
+    spped = 200
+    sat22 = 0
+    k = 9
+    while k > -1:
+        print(k)
+        light.set_pixel_color(k, red_sat(sat22))
+        sat22 = sat22 + 25
+        pause(spped)
+        k += -1
+    # light.set_all(0xffffff)
+    pause(200)
 def red_gradiant_3(start: number):
     global spped, sat2
     spped = 200
     sat2 = 0
-    for i in range(start, start + 10, 1):
-        light.set_pixel_color(i % 10, red_sat(sat2))
+    j = start
+    while j < start + 10:
+        console.log(j%10)
+        light.set_pixel_color(j % 10, red_sat(sat2))
         sat2 = sat2 + 25
         pause(spped)
-
-def on_forever3():
-    global spped, sat22
-    spped = 200
-    sat22 = 0
-    j = 9
-    while j > -1:
-        print(j)
-        light.set_pixel_color(j, red_sat(sat22))
-        sat22 = sat22 + 25
+        j += 1
+    sat2 = 255
+    j = start
+    while j < start + 10:
+        light.set_pixel_color(j % 10, red_sat(sat2))
+        sat2 = sat2 - 25
+        console.log(sat2)
         pause(spped)
-        j += -1
-    # light.set_all(0xffffff)
-    pause(200)
+        j += 1
+    console.log("done")
+
+k = 0
+sat22 = 0
+spped = 0
+sat2 = 0
+# red_gradiant_2()
+# on_forever3()
 
 def on_forever4():
     red_gradiant_3(0)
     red_gradiant_3(1)
-    red_gradiant_3(2)
-    red_gradiant_3(3)
-    red_gradiant_3(4)
-    red_gradiant_3(5)
-    red_gradiant_3(6)
-    red_gradiant_3(7)
-    red_gradiant_3(8)
-    red_gradiant_3(9)
-    pause(100)
-    
-    # red_gradiant_2()
-    # on_forever3()
-
+    # red_gradiant_3(2)
+    # red_gradiant_3(3)
+    # red_gradiant_3(4)
+    # red_gradiant_3(5)
+    # red_gradiant_3(6)
+    # red_gradiant_3(7)
+    # red_gradiant_3(8)
+    # red_gradiant_3(9)
+    pause(1000)
 forever(on_forever4)
