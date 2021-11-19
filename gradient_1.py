@@ -91,20 +91,21 @@ def red_gradiant_3(start: number):
     sat2 = 0
     j = start
     while j < start + 10:
-        console.log(j%10)
+        # console.log(j%10)
         light.set_pixel_color(j % 10, red_sat(sat2))
+        # console.log(sat2)
         sat2 = sat2 + 25
         pause(spped)
         j += 1
-    sat2 = 255
+    sat2 = 225
     j = start
     while j < start + 10:
         light.set_pixel_color(j % 10, red_sat(sat2))
         sat2 = sat2 - 25
-        console.log(sat2)
+        # console.log(sat2)
         pause(spped)
         j += 1
-    console.log("done")
+    # console.log("done")
 
 k = 0
 sat22 = 0
@@ -112,10 +113,11 @@ spped = 0
 sat2 = 0
 # red_gradiant_2()
 # on_forever3()
+ 
 
 def on_forever4():
     red_gradiant_3(0)
-    red_gradiant_3(1)
+    # red_gradiant_3(1)
     # red_gradiant_3(2)
     # red_gradiant_3(3)
     # red_gradiant_3(4)
