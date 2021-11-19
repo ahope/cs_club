@@ -6,7 +6,7 @@ gradient of color.
 
 ## Step 1: Getting the Circuit Playground going
 
-[MakeCode](https://maker.makecode.com/#editor)
+[MakeCode](https://maker.makecode.com/#editor): Go here to write code!
 
 * Create a new project, based on the Circuit Playground
 * Use the block editor to build a simple program with the lights
@@ -36,7 +36,7 @@ So let's think: What's this program really doing?
 
 To set the color of a neopixel: 
 
-```
+```python
 light.set_pixel_color(6, 0xFF0000)
 ```
 
@@ -44,15 +44,21 @@ light.set_pixel_color(6, 0xFF0000)
 
 To convert numbers to a light color: 
 
-```
+```python
 light.rgb(255, 0, 0)
-
 ```
 (this returns the color red)
 
+We can have variables to hold specific colors: 
+
+```python
+red = light.rgb(255, 0, 0)
+```
+
+
 
 To set the color of a neopixel to red using HSV: 
-```
+```python
 light.set_pixel_color(6, light.hsv(255, 255, 255))
 ```
 
@@ -61,7 +67,8 @@ light.set_pixel_color(6, light.hsv(255, 255, 255))
 
 # Resources
 
-[Color Picker](https://colorpicker.me/#f87eab)
+* [Color Picker](https://colorpicker.me/#f87eab): This can help you to explore color, 
+   or find exactly the color you want. 
 
 
 
