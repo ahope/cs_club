@@ -31,6 +31,13 @@ to the drawing board or move on to the next step.
 So let's think: What's this program really doing? 
 
 
+## Step 3: Explore and Test
+
+
+## Step 4: Finalize, cleanup, document, save. 
+
+
+
 
 ## Potentially Relevant Information
 
@@ -77,5 +84,11 @@ light.set_pixel_color(6, light.hsv(255, 255, 255))
 
 
 # Challenges
+
+Things to try next: 
+
+* Can you make the color change with each iteration? That is, instead of just shades 
+    of red, can you make shades of blue, or green, or yellow, or so on? 
+
 
 
